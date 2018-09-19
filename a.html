@@ -10,6 +10,21 @@
     background-size: 500px;
     background-color: #BBB;
   }
+  .code{
+    -webkit-animation: color 1s infinite;
+    animation: color 1s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+
+  }
+  @-webkit-keyframes color {
+    from {color:#000000;}
+    to   {color:#008800;}
+  }
+  @keyframes color {
+    from {color:#000000;}
+    to   {color:#008800;}
+  }
   </style>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -25,6 +40,7 @@
           good luck<br>
           - asbestos 1033<br><br>
         </p>
+        <h2 class="code">This card's code is <strong><span id="code">XXXXXXXXX</span></strong></h2>
         <!-- SSH.CODERMERLIN.COM -->
       </div>
       <div class="col-sm-3" style="margin-bottom: 20px;">
@@ -32,5 +48,19 @@
       </div>
     </div>
   </div>
+  <script>
+  // pass the specific code into the url using ?c=CODE_HERE
+  // this will be included in the QR codes
+  // ex. http://asbestos1033.tk/a.html?c=ABCDEF
+  let urlParams = new URLSearchParams(window.location.search);
+  let code = urlParams.get('c');
+
+  if(code && code != ""){
+    $('#code').html(code);
+  }
+  else{
+    $('.code').html("You must supply query parameter `c` for this to work correctly");
+  }
+  </script>
 </body>
 </html>
