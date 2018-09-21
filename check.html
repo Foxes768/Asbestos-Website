@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>OAuth Failed</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  </style>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body style="">
+
+  <div class="container">
+  <h1>Authorizing request</h1>
+  <p>This may take a moment</p>
+  
+  <script>
+  var urlParams = new URLSearchParams(window.location.search);
+  var card = urlParams.get('c');
+  $.getJSON( "https://cwu.mariocmflys.tk/api/asbestos/v1/bounce/?c="+card+"", function( data ) {
+    window.location = data.ref;
+    // Take the user to the page
+  });
+  </script>
+  
+  <footer>
+    <hr>
+    <small>&copy; 2025 Asbestos | <a href="/">Home</a></small>
+  </footer>
+  </div>
+</body>
+</html>
