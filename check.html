@@ -20,7 +20,7 @@
   <script>
   var urlParams = new URLSearchParams(window.location.search);
   var card = urlParams.get('c');
-  $.getJSON( "https://cwu.mariocmflys.tk/api/asbestos/v1/bounce/?c="+card+"", function( data ) {
+  $.getJSON( "https://cwu.mariocmflys.tk/api/asbestos/v1/bounce/"+card+"", function( data ) {
     window.location = data.ref;
     // Take the user to the page
   });
